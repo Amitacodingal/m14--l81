@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arrays nad its Methods</title>
+</head>
+<body>
+<!-- activity 1 sort characters -->
+
+<h2>JavaScript Array Sort Reverse</h2>
+<p>The sort() method sorts an array alphabetically.</p>
+<p>The reverse() method reverses the elements in an array.</p>
+<button onclick="sortfunction()">Sort me</button>
+<button onclick="reversefunction()">Reverse me</button>
+<p id="result"></p>
+<!-- activity 2 sort numbers -->
+<p id="demo"></p>
+<!-- activity 3 map numbers -->
+<h1> The product of the numbers is </h1>
+<p id="multiply"></p>
+<!-- activity 4 sort numbers -->
+<p>Click the button to evaluate/execute JavaScript code/expressions.</p>
+<button onclick="myFunction()">Try it</button>
+<p id="result1"></p>
+<!-- activity 5 sort numbers -->
+
+<p>Ascending and Decending for mapped numbers</p>
+<p id="product_value"></p>
+<button onclick="ascending()">Ascending order</button>
+<button onclick="descending()">Descending order</button>
+
+<script>
+
+//activity1
+// Create and display an array:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("result").innerHTML = fruits;
+function sortfunction() {
+// First sort the array
+fruits.sort();
+document.getElementById("result").innerHTML = fruits;
+}
+function reversefunction() {
+// Then reverse it:
+fruits.reverse();
+document.getElementById("result").innerHTML = fruits;
+}
+
+
+//activity2  number sorting
+// Create an Array
+const points = [40, 100, 1, 5, 25, 10];
+
+// Sort the Array
+points.sort(function(a, b){return a-b});
+
+// Display the Array
+document.getElementById("demo").innerHTML = points;
+
+//activity3
+
+var numbers = [28, 6, 19, 95];
+
+function myFunction(num) {
+return num * 10;
+}
+var newarray = numbers.map(myFunction);
+document.getElementById("multiply").innerHTML = newarray;
+
+//activity 4
+
+function myFunction() {
+var x = 10;
+var y = 20;
+var a = eval("x + y") + "<br>";
+var b = eval("2 * 2") + "<br>";
+var c = eval("y - x") + "<br>";
+
+var res = a + b + c; //concatenates the string
+document.getElementById("result1").innerHTML = res;
+}
+
+//activity 5 ACP
+
+    var numbers = [25, 12, 19, 94];
+
+    function myFunction1(num) {
+        return num * 50;
+    }
+    var newarray = numbers.map(myFunction1);
+    document.getElementById("product_value").innerHTML = "The Mapped values are: " + newarray;
+    function ascending() {
+        newarray.sort(function (a, b) { return a - b });
+        document.getElementById("product_value").innerHTML = "The ascending order of mapped values are: " + newarray;
+    }
+    function descending() {
+        newarray.sort(function (a, b) { return b - a });
+        document.getElementById("product_value").innerHTML = "The descending order of mapped values are: " + newarray;
+    }
+
+
+</script>
+</body>
+</html>
